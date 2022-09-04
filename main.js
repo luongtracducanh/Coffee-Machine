@@ -1,4 +1,4 @@
-const input = require('sync-input')
+const input = require('sync-input');
 
 let machine = {
 	"water": 400,
@@ -13,22 +13,19 @@ const coffee = [
 		"water": 250,
 		"milk": 0,
 		"beans": 16,
-		"cup": 1,
-		"money": 4,
+		"money": 4
 	},
 	latte = {
 		"water": 350,
 		"milk": 75,
 		"beans": 20,
-		"cup": 1,
-		"money": 7,
+		"money": 7
 	},
 	cappuccino = {
 		"water": 200,
 		"milk": 100,
 		"beans": 12,
-		"cup": 1,
-		"money": 6,
+		"money": 6
 	}
 ]
 
@@ -58,7 +55,7 @@ function buy() {
 			console.log("Sorry, not enough milk!\n");
 		} else if (machine.beans < coffee[coffee_to_buy].beans) {
 			console.log("Sorry, not enough coffee beans!\n");
-		} else if (machine.cups < coffee[coffee_to_buy].cups) {
+		} else if (machine.cups < 1) {
 			console.log("Sorry, not enough cups!\n");
 		} else {
 			machine.water -= coffee[coffee_to_buy].water;
@@ -76,9 +73,7 @@ function fill() {
 	let milk_added = Number(input("Write how many ml of milk you want to add:\n"));
 	let beans_added = Number(input("Write how many grams of coffee beans you want to add:\n"));
 	let cups_added = Number(input("Write how many disposable coffee cups you want to add:\n"));
-
 	console.log();
-
 	machine.water += water_added;
 	machine.milk += milk_added;
 	machine.beans += beans_added;
